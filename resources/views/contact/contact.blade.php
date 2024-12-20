@@ -43,7 +43,7 @@
                     <strong>Email:</strong> <a href="mailto:info@avashnepal.com" class="text-blue-500">info@avashnepal.com</a>
                 </p>
                 <p>
-                    <strong>Phone:</strong> <a href="tel:+977123456789" class="text-blue-500">+977-123-456-789</a>
+                    <strong>Phone:</strong> <a href="tel:+977123456789" class="text-blue-500">+977-9860-761-787</a>
                 </p>
                 <p>
                     <strong>Address:</strong><br>
