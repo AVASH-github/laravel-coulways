@@ -48,12 +48,30 @@
                 <p>
                     <strong>Address:</strong><br>
                     Kathmandu, Nepal
-                </p>
-            </div>
+                </p>   
 
+            </div>
+        
             <!-- Contact Form -->
-            <form action="#" method="POST" class="bg-white p-6 rounded-lg shadow-lg space-y-4">
+            <form action="{{route('contact.store')}}" method="POST" class="bg-white p-6 rounded-lg shadow-lg space-y-4">
                 @csrf
+                <!--Validation Errors -->
+                @if ($errors->any())
+    <div class="bg-red-100 text-red-700 p-4 rounded mb-6">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<!-- Success Message -->
+@if(session('success'))
+    <div class="bg-green-100 text-green-700 p-4 rounded mb-6">
+        {{ session('success') }}
+    </div>
+@endif
                 <div>
                     <label for="name" class="block text-gray-700 font-bold">Your Name</label>
                     <input type="text" name="name" id="name" class="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Enter your name" required>
@@ -75,6 +93,12 @@
             </form>
         </div>
     </section>
+<div class="m-4">
+<a href="{{route('message.index')}}" class="bg-gray-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600">
+    View All Messages
+</a>
+</div>
+    
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6">
